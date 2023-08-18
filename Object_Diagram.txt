@@ -1,0 +1,232 @@
+@startuml
+
+object glPers
+
+object bereiche
+object masse
+
+
+
+bereiche : UserId [DINT]
+
+object Bereiche
+Bereiche : PortalAusrichtung [INT]
+Bereiche : Name [STRING]
+Bereiche : PortalposX [LREAL]
+Bereiche : PortalposY [LREAL]
+Bereiche : AutoPzuP_erlauben [BOOL]
+Bereiche : OffsetX [LREAL]
+Bereiche : OffsetX [LREAL]
+Bereiche : OffsetX [LREAL]
+Bereiche : Toleranz [LREAL]
+Bereiche : AnzahlPunkte_X [DINT]
+Bereiche : AnzahlPunkte_X [DINT]AnzahlPunkte_y [DINT]
+Bereiche : Abgreifen_erlaubt [BOOL]
+Bereiche : Einlagern_erlaubt [BOOL]
+Bereiche : Futtern_erlaubt [BOOL]
+
+Object Masse
+Masse : Xa [LREAL]
+Masse : Xb [LREAL]
+Masse : Ya [LREAL]
+Masse : Yb [LREAL]
+Masse : Za [LREAL]
+Masse : Zb [LREAL]
+
+Object VorPosACS
+VorPosACS : a0 [LREAL]
+VorPosACS : a1 [LREAL]
+VorPosACS : a2 [LREAL]
+VorPosACS : a3 [LREAL]
+VorPosACS : a4 [LREAL]
+VorPosACS : a5 [LREAL]
+VorPosACS : X [LREAL]
+VorPosACS : Y [LREAL]
+VorPosACS : Z [LREAL]
+VorPosACS : A [LREAL]
+VorPosACS : B [LREAL]
+VorPosACS : C [LREAL]
+VorPosACS : v0 [LREAL]
+VorPosACS : v1 [LREAL]
+VorPosACS : v2 [LREAL]
+VorPosACS : v3 [LREAL]
+VorPosACS : v4 [LREAL]
+VorPosACS : v5 [LREAL]
+VorPosACS : v20 [LWORD]
+VorPosACS : v21 [LWORD]
+VorPosACS : v22 [LWORD]
+VorPosACS : v23 [LWORD]
+VorPosACS : v24 [LWORD]
+VorPosACS : v25 [LWORD]
+
+Object LetzterPunkt
+LetzterPunkt : X [LREAL]
+LetzterPunkt : Y [LREAL]
+LetzterPunkt : Z [LREAL]
+
+Object Speerbereiche
+Speerbereiche : Name [STRING]
+Speerbereiche : PosSchieben [INT]
+Speerbereiche : PosImmerSchieben [BOOL]
+Speerbereiche : ProzentInSb [REAL]
+Speerbereiche : OffsetX [LREAL]
+Speerbereiche : OffsetY [LREAL]
+Speerbereiche : OffsetZ [LREAL]
+Speerbereiche : Toleranz [LREAL]
+
+Object MasseSperr
+MasseSperr : Xa [LREAL]
+MasseSperr : Xb [LREAL]
+MasseSperr : Ya [LREAL]
+MasseSperr : Yb [LREAL]
+MasseSperr : Za [LREAL]
+MasseSperr : Zb [LREAL]
+
+object BereicheUser
+BereicheUser : PunkteStateAct [DINT]
+BereicheUser : PunktIndexAct [DINT]
+BereicheUser : Name [STRING]
+BereicheUser : Id [DINT]
+BereicheUser : Id_index [DINT]
+BereicheUser : GreiferFaktorLaengs [REAL]
+BereicheUser : GreiferFaktorQuer [REAL]
+BereicheUser : IdMasterBereich [DINT]
+
+object MasseBereicheUser
+MasseBereicheUser : Xa [LREAL]
+MasseBereicheUser : Xb [LREAL]
+MasseBereicheUser : Ya [LREAL]
+MasseBereicheUser : Yb [LREAL]
+MasseBereicheUser : Za [LREAL]
+MasseBereicheUser : Zb [LREAL]
+
+object TeleZyl
+TeleZyl : KolbenDurchm [REAL]
+TeleZyl : StangenDurchm [REAL]
+
+object HubZyl
+HubZyl : KolbenDurchm [REAL]
+HubZyl : StangenDurchm [REAL]
+
+object CamConst
+CamConst : CamPosX [REAL]
+CamConst : CamPosY [REAL]
+CamConst : CamWinkel [REAL]
+CamConst : CamHoehe [REAL]
+
+object tool
+tool : actTool [DINT]
+
+object Greifer
+Greifer : Name [STRING]
+Greifer : DrehRadius [REAL]
+Greifer : DistDrehPunkte [REAL]
+Greifer : WinkDrehPunktSpitz [REAL]
+Greifer : WinkelOffen [REAL]
+Greifer : WinkelZu [REAL]
+Greifer : Laenge [REAL]
+Greifer : BreiteOffen [REAL]
+Greifer : BreiteZu [REAL]
+Greifer : HoheOffen [REAL]
+Greifer : HoheZu [REAL]
+Greifer : HeuHoeheVoll [REAL]
+
+
+object AuslagernParam
+AuslagernParam : Name [STRING]
+AuslagernParam : Index [DINT]
+AuslagernParam : Start [BOOL]
+AuslagernParam : Done [BOOL]
+AuslagernParam : AbgreiffBereich [DINT]
+AuslagernParam : AbwurfBereich [DINT]
+AuslagernParam : Abgriffe [INT]
+
+object AbwurfRasterParam
+AbwurfRasterParam : VersatzAktiv [BOOL]
+
+object States_AbwurfRasterParam
+States_AbwurfRasterParam : States [INT]
+
+object AbgreifRasterParam
+AbgreifRasterParam : VersatzAktiv [BOOL]
+
+object States_AbgreifRasterParam
+States_AbgreifRasterParam : States [INT]
+
+object UmstockenParam
+UmstockenParam : Name [STRING]
+UmstockenParam : Index [DINT]
+UmstockenParam : Start [BOOL]
+UmstockenParam : Done [BOOL]
+UmstockenParam : AbgreiffBereich [DINT]
+UmstockenParam : AbwurfBereich [DINT]
+UmstockenParam : Abgriffe [INT]
+
+object AbwurfRasterParam2
+AbwurfRasterParam2 : VersatzAktiv [BOOL]
+
+object States_AbwurfRasterParam2
+States_AbwurfRasterParam2 : States [INT]
+
+object AbgreifRasterParam2
+AbgreifRasterParam2 : VersatzAktiv [BOOL]
+
+object States_AbgreifRasterParam2
+States_AbgreifRasterParam2 : States [INT]
+
+
+object EinlagernParam
+EinlagernParam : Fehlt noch, relativ gross!
+
+
+
+
+
+
+
+glPers *-- "1" bereiche
+glPers *-- "1" masse
+glPers *-- "1" EinlagernParam
+glPers *-- "1" AuslagernParam
+glPers *-- "1" UmstockenParam
+
+bereiche *-- "m" Bereiche
+bereiche *-- "m" BereicheUser
+
+Bereiche *-- "1" Masse
+Bereiche *-- "1" VorPosACS
+Bereiche *-- "1" LetzterPunkt
+Bereiche *-- "n" Speerbereiche
+
+Speerbereiche *-- "1" MasseSperr
+
+BereicheUser *-- "1" MasseBereicheUser
+
+masse *-- "1" TeleZyl
+masse *-- "1" tool
+masse *-- "1" HubZyl
+masse *-- "1" CamConst
+
+tool *-- "p" Greifer
+
+AuslagernParam *-- "1" AbwurfRasterParam
+AuslagernParam *-- "1" AbgreifRasterParam
+
+AbwurfRasterParam *-- "k" States_AbwurfRasterParam
+AbgreifRasterParam *-- "k" States_AbgreifRasterParam
+
+
+UmstockenParam *-- "1" AbwurfRasterParam2
+UmstockenParam *-- "1" AbgreifRasterParam2
+
+AbwurfRasterParam2 *-- "k" States_AbwurfRasterParam2
+AbgreifRasterParam2 *-- "k" States_AbgreifRasterParam2
+
+
+
+
+
+
+
+
+@enduml
