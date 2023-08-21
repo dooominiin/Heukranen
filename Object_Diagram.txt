@@ -176,11 +176,36 @@ States_AbgreifRasterParam2 : States [INT]
 
 
 object EinlagernParam
-EinlagernParam : Fehlt noch, relativ gross!
+EinlagernParam : AlternierendAktiv [BOOL]
+EinlagernParam : AbgreifBereich [DINT]
+EinlagernParam : AbwurfBereich [DINT]
+EinlagernParam : HoeheTPCAbgreifBereich [LREAL]
+EinlagernParam : HoeheTPCAbwurfBereich [LREAL]
+EinlagernParam : AktiveParamHeuErkennung [INT]
 
+object RasterParam
+RasterParam : VersatzAktiv
 
+object States_3 
+States_3 : States
 
+object HeuErkennungParam
+HeuErkennungParam : AktiveParamHeuErkennung [String]
 
+object HeuErkennungParams
+HeuErkennungParam : FutterQualität [STRING]
+
+object Liste
+Liste : Name [STRING]
+Liste : AnzahlAufträge [INT]
+Liste : iMinHeuHoeh [REAL]
+Liste : AusrichtungKranSortPos [BOOL]
+Liste : AusrichtungKranSortNeg [BOOL]
+Liste : SortNachPosition [BOOL]
+Liste : SortFirstLow [BOOL]
+Liste : DeletSizeLaengs [INT]
+Liste : DeletSizeQuer [INT]
+Liste : Nachgreifen [BOOL]
 
 
 
@@ -222,9 +247,14 @@ UmstockenParam *-- "1" AbgreifRasterParam2
 AbwurfRasterParam2 *-- "k" States_AbwurfRasterParam2
 AbgreifRasterParam2 *-- "k" States_AbgreifRasterParam2
 
+EinlagernParam *-- "1" RasterParam
+EinlagernParam *-- "1" HeuErkennungParam
 
+RasterParam *-- "f" States_3
 
+HeuErkennungParam *-- "h" HeuErkennungParams
 
+HeuErkennungParams *-- "g" Liste
 
 
 
