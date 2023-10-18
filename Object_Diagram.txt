@@ -187,7 +187,7 @@ object RasterParam
 RasterParam : VersatzAktiv
 
 object States_3 
-States_3 : States
+States_3 : States [INT]
 
 object HeuErkennungParam
 HeuErkennungParam : AktiveParamHeuErkennung [String]
@@ -250,7 +250,7 @@ AbgreifRasterParam2 *-- "k" States_AbgreifRasterParam2
 EinlagernParam *-- "1" RasterParam
 EinlagernParam *-- "1" HeuErkennungParam
 
-RasterParam *-- "f" States_3
+RasterParam *-- "k" States_3
 
 HeuErkennungParam *-- "h" HeuErkennungParams
 
