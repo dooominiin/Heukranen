@@ -1,0 +1,12 @@
+@startuml
+class du {}
+class sollst {}
+class keine {}
+class beziehungen {}
+class erzeugen {}
+
+du -- sollst : beziehungen >
+sollst -- keine 
+keine <.. beziehungen : erzeugen
+beziehungen .. erzeugen
+@enduml
