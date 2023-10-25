@@ -1,0 +1,14 @@
+@startuml
+scale 2
+
+start
+
+:messen der Raumgeometrie;
+
+:Bilden eines geometrischen Koerpers;
+
+:Kalibrierung/Nachbearbeitung;
+
+stop
+
+@enduml

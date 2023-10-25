@@ -192,7 +192,7 @@ def parse_xml_nur_mit_connections(xml_file):
                     if f"{name}.{method}(" in pou_text:
                         pou_ruft_auf.append(f"{name}.{method}")
 
-            if len(pou_ruft_auf)>0:
+            if len(pou_ruft_auf)>2:
                 plantuml_string = f'class {pou_name} << {pou_type} >>'
                 f.write(plantuml_string + '{\n')
                 # Write the methods to the PlantUML diagram

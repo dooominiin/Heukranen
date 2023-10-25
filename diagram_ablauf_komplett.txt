@@ -1,0 +1,85 @@
+@startuml
+scale 4
+title Ablauf automatisierte Raumerfassung
+
+start
+
+:messen der Raumgeometrie;
+
+:Oberflaechenrekonstruktion;
+
+:Kalibrierung/Nachbearbeitung;
+
+:Zonen definieren;
+
+:automatisierte offline Pfadplanung;
+
+:online testlauf;
+
+stop
+
+@enduml
+
+
+@startuml
+scale 8
+title Ablauf automatisierte Raumerfassung
+
+state "Messen der Raumgeometrie" as Messen
+Messen : Bauen einer Messeinrichtung
+Messen : Integrieren der Messeinrichtung
+Messen : Implementieren des Messprogramms
+
+state "Oberflaechenrekonstruktion" as Bilden
+Bilden : Evaluieren eines Algorithmus
+Bilden : Implementieren des Algorithmus
+Bilden : Einrichten der Visualisierungssoftware
+
+state "Kalibrierung / Nachbearbeitung" as Kalibrierung
+Kalibrierung : Evaluieren der Bearbeitungssoftware
+Kalibrierung : Einrichten der Bearbeitungssoftware
+
+state "Zonen definieren" as Zonen
+Zonen : Evaluieren einer Softwareloesung (z.B. CAD)
+Zonen : Entwickeln eines Regelsets je nach Zone
+Zonen : Implementieren des Programms zur Targeterstellung
+
+state "automatisierte offline Pfadplanung" as Pfadplanung
+Pfadplanung : Evaluieren der Pfadplanungssoftware
+Pfadplanung : Implementieren der Pfadplanungssoftware
+Pfadplanung : Anpassung der bestehenden Softwarestruktur
+
+state "ORIANA online Testlauf" as Testlauf
+Testlauf : Entwickeln eines sinnvollen Testablaufs
+Testlauf : Implementieren eines generischen Testprogramms
+
+
+[*] --> Messen
+Messen --> Bilden
+Bilden --> Kalibrierung
+Kalibrierung --> Zonen
+Zonen --> Pfadplanung
+Pfadplanung --> Testlauf
+Testlauf --> [*]
+
+@enduml
+
+
+
+@startuml
+scale 4
+title Ablauf manuelle Zonendefinition
+
+start
+
+:manuelles setzen der Zonen im Weltkoordinatensystem;
+
+:setzen der Rasterparameter;
+
+:online testlauf ;
+
+:manuelle Korrekturen;
+
+stop
+
+@enduml

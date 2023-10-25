@@ -1,0 +1,19 @@
+@startuml
+scale 4
+title Codesys zu UML Parser
+
+:export codesys als XML;
+
+:import XML in python;
+
+:interpretation Codesys XML;
+
+:selektion der gewollten Objekte;
+
+:generierung der plantuml codefiles;
+
+:rendern der Diagramme mit plantuml;
+
+stop
+
+@enduml
